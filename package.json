@@ -1,0 +1,11 @@
+{
+  "name": "iris-assistant-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "pnpm --filter @workspace/coucou-assistant run dev",
+    "build": "PORT=20827 BASE_PATH=/ pnpm --filter @workspace/coucou-assistant run build",
+    "typecheck": "pnpm --filter @workspace/coucou-assistant run typecheck"
+  }
+}
