@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "IRIS"
+description = "IRIS is a Portuguese-language desktop companion preview with Mochi animations, local task tracking, and a foundation for native Windows and macOS integrations."
+version = "1.0.0"
+id = "artifacts/coucou-assistant"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20827
+
+[services.development]
+run = "pnpm --filter @workspace/coucou-assistant run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/coucou-assistant", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/coucou-assistant/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20827"
+BASE_PATH = "/"
