@@ -1,0 +1,1 @@
+{"main-capability":{"identifier":"main-capability","description":"Permite à janela flutuante ajustar o seu tamanho e encerrar a aplicação.","local":true,"windows":["island"],"permissions":["core:default","core:window:allow-set-size","core:window:allow-close"]}}
